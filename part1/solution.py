@@ -8,7 +8,7 @@ documents = [DIV_COMM, MAG_CART]
 
 searches = {}
 for kw in sys.argv[1:]:
-    searches[kw] = re.compile(r'\b' + kw + r'\b', re.IGNORECASE)
+    searches[kw] = re.compile(r'(?:\*{3} START OF.*$)|' r'(\b' + kw + r'\b)', re.IGNORECASE)
 
 # Assign regex patterns to find the titles, even if they extend across
 # multiple lines.
