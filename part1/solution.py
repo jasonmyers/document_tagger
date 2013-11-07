@@ -13,7 +13,7 @@ for kw in sys.argv[1:]:
 # Assign regex patterns to find the titles, even if they extend across
 # multiple lines.
 
-title_search = re.compile(r'(?:title:\s*)(?P<title>(.*)(\n +.*)+)',
+title_search = re.compile(r'(?:\*{3} START OF.*$)|' r'(?:title:\s*)(?P<title>(.*)(\n +.*)+)',
                             re.IGNORECASE|re.MULTILINE)
 
 author_search = re.compile(r'(author:)(?P<author>.*)', re.IGNORECASE)
